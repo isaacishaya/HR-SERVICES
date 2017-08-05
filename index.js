@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 
-var router = require("./controllers/router");
+var router = require("./controller/Router");
 // var model = require('./controllers/livetest');
 app.enabled('trust proxy');
 app.set('view engine', 'jade');
