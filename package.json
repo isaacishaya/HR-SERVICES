@@ -1,0 +1,28 @@
+{
+  "name": "human_resource",
+  "version": "1.0.0",
+  "description": "human resource",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacishaya/HR-SERVICES.git"
+  },
+  "author": "isaac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacishaya/HR-SERVICES/issues"
+  },
+  "homepage": "https://github.com/isaacishaya/HR-SERVICES#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "compression": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.5",
+    "morgan": "^1.8.2"
+  }
+}
