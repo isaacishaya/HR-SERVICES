@@ -10,14 +10,12 @@ var mongoose = require('mongoose');
 //var url = require('url');
 
 
-
-
 var CONN_DISCONNECTED = 0,
     CONN_DISCONNECTING = 3,
     CONN_CONNECTED = 1;
 
 
-var MONGOHQ_URI = 'mongodb://human_resource:123456i@ds135963.mlab.com:35963/human_resource'
+var MONGOHQ_URI = 'mongodb://human resource:123456i@ds135963.mlab.com:35963/human_resource'
 
 
 var openConnection = function(callback) {

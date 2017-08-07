@@ -1,24 +1,55 @@
 var db = global.db;
 
-var Schema = mongoose.Schema;
+var Schema = db.Schema;
 var employeeSchema = new Schema({
-  Firstname:String,
-  Lastname:{type:String, default:'isaac'},
-  middlename:{type:String, default:''},
-  Date_of_birth:{type:String, default:''},
+  Firstname:{
+		type: String,
+		required: true
+	},
+  Lastname:{
+		type: String,
+
+	},
+  middlename:{
+		type: String,
+    
+	},
+  Date_of_birth:{
+		type: String,
+
+	},
   Gender:{
    male: String,
    female:String
  },
- phone:Number,
- mobile_phone_number:Number,
- address:String,
- city:String,
- state:String,
- Lga:String,
- country:String
+ telephone_number:{
+   type: Number,
 
+ },
+ mobile_number:{
+   type: Number,
 
+ },
+ address:{
+   type: String,
+
+ },
+ city:{
+   type: String,
+
+ },
+ state:{
+   type: String,
+
+ },
+ Lga:{
+   type: String,
+
+ },
+ nationality:{
+   type: String,
+
+ },
 });
 
-module.exports.employeemodel = db.model('em', employeeSchema);
+module.exports.employeeModel = db.model('employee', employeeSchema);

@@ -1,26 +1,38 @@
 var employeeDb = require('./employee/employee-db.js');
-var employeemodel= employeeDb.employeemodel;
+var emplModel= employeeDb.employeeModel;
 
 function employee() {
 
-  employee.prototype.create = function (options) {
-    var a = new employeemodel(options);
-    a.save(function (err,json) {
-      if (err) {
+        employee.prototype.create = function (properties,callback) {
 
-        callback(err)
+          var tax = new emplModel(properties);
+          tax.save(function (err,record) {
+            if (err) {
+              callback(err)
+            }
+            else {
+              callback(record !== null? record.toJSON() : null);
 
-      } else {
+            }
+          })
+        };
 
-        callback(json)
+        employee.prototype.findAll = function(callback){
+            
+            
+            emplModel.find({}, function(err, data) {
+              
+              if(err){
+                  callback(err);
+              }else{
+                  callback(data);
+              }
+              
+          });
+        };
 
-      }
-    })
-  };
-
-  employee.prototype.findBy = function() {
-
-          employeemodel.find({'_id':id},function (err, json) {
+        employee.prototype.findById = function(id,callback) {
+        emplModel.find({_id : id}).lean().exec(function(err, data) {
 
               if (err) {
 
@@ -28,7 +40,7 @@ function employee() {
 
               } else {
 
-                callback(json)
+                callback(data)
 
               }
 
